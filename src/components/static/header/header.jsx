@@ -42,7 +42,7 @@ function Header() {
             Cart
           </button>
         </div>
-         {/* {Otx.Favhover && <Fav/>}  */}
+         {Otx.Favhover && <Fav/>} 
         {Otx.hover &&
           <div id="mainl" onMouseLeave={changeH} onClick={Otx.setHover(true)}>
           <h2 id='Cart_title'>Cart</h2>
