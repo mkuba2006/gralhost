@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const OpenContext = createContext();
 
@@ -9,9 +9,23 @@ const OpenProvider = (props) => {
   const [isCart, changeC] = useState(false);
   const [isELVisible, changeVisible] = useState(false);
 
-  const toggle = (setter) => () => setter({ type: "TOGGLE" });
-  const close = (setter) => () => setter({ type: "CLOSE" });
-  const open = (setter) => () => setter({ type: "OPEN" });
+  const toggle = (setter) => () => {
+    setter({ type: "TOGGLE" });
+  };
+
+  const close = (setter) => () => {
+    setter({ type: "CLOSE" });
+  };
+
+  const open = (setter) => () => {
+    setter({ type: "OPEN" });
+  };
+  useEffect(() => {
+    console.log("isHover old:", isHover);
+    console.log("isHover new:", !isHover);
+  }, [isHover]);
+
+
 
   const OpenCTX = {
     open: isOpen,
@@ -37,4 +51,4 @@ const OpenProvider = (props) => {
   );
 };
 
-export default OpenProvider; // Add this line to export the OpenProvider component as the default export
+export default OpenProvider;
