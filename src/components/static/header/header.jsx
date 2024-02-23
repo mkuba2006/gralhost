@@ -36,7 +36,7 @@ function Header() {
             <FavList/>
             Favourite
           </button>
-          <button className={Otx.hover ? classes.activebutton : classes.button} onClick={Otx.setHover} >
+          <button className={Otx.hover ? classes.activebutton : classes.button} onClick={changeH} >
             <Cart/>
             <span>{length}</span>
             Cart

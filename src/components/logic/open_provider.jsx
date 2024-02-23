@@ -2,10 +2,9 @@ import React, { createContext, useReducer } from 'react';
 import OpenContext from './open_context';
 
 const reducer = (state, action) => {
-  !state;
-  console.log(state);
-
+  return !state;
 };
+
 const favreducer = (state, action) => {
   console.log(action);
   if (action === "TOGGLE") {
@@ -17,11 +16,9 @@ const favreducer = (state, action) => {
   }
 }
 
-
-
 const OpenProvider = (props) => {
   const [isOpen, change] = useReducer(reducer, false);
-  const [isHover, changeH] = useReducer(reducer, false);
+  const [isHover, changeH] = useReducer(favreducer, false);
   const [isCart, changeC] = useReducer(reducer, false);
   const [isELVisible, changeVisible] = useReducer(reducer, false);
   const [isFavhover, changeFavH] = useReducer(favreducer, false);
@@ -36,7 +33,7 @@ const OpenProvider = (props) => {
     setOpen: toggle(change),
 
     hover: isHover,
-    setHover: open(changeH),
+    setHover: toggle(changeH),
 
     Favhover: isFavhover,
     setFavHover: toggle(changeFavH),
