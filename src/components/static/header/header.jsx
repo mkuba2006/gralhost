@@ -12,7 +12,7 @@ function Header() {
   const Otx = useContext(OpenContext);
 
   const changeH = () =>{
-    Otx.setHover();
+    Otx.setHover(prevHover => !prevHover)
     console.log(Otx.hover);
     console.log("buton");
   };
