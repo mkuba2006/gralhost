@@ -4,7 +4,7 @@ import OpenContext from './open_context';
 const reducer = (state, action) => {
   !state;
   console.log(state);
-  console.log(action);
+
 };
 const favreducer=(state,action)=>{
   console.log(action);
@@ -35,8 +35,9 @@ const OpenProvider = (props) => {
   const OpenCTX = {
     open: isOpen,
     setOpen: toggle(change),
+
     hover: isHover,
-    setHover: toggle(changeH),
+    setHover: open(changeH),
 
     Favhover: isFavhover,
     setFavHover: toggle(changeFavH),
