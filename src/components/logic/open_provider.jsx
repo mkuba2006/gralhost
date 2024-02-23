@@ -1,7 +1,11 @@
 import React, { createContext, useReducer } from 'react';
 import OpenContext from './open_context';
 
-const reducer = (state, action) => !state;
+const reducer = (state, action) =>{
+  console.log(action);
+  console.log(state);
+  return !state;
+} 
 const favreducer=(state,action)=>{
   console.log(action);
   console.log(state);
