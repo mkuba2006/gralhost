@@ -30,3 +30,4 @@ const OpenProvider = (props) => {
     </OpenContext.Provider>
   );
 };
+export default OpenProvider;
