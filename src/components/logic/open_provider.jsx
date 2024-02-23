@@ -41,7 +41,7 @@ const OpenProvider = (props) => {
 
 
     seeCart: isCart,
-    setCart: open(changeC),
+    setCart: toggle(changeC),
     ELvisible: isELVisible,
     setVisible: toggle(changeVisible),
   };
