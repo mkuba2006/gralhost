@@ -15,7 +15,6 @@ function Fav() {
     
     const setopen = () =>{
         Otx.setFavHover();
-        console.log('sope');
     }
 
     return (

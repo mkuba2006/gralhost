@@ -10,6 +10,10 @@ import './cart.css'
 function Cart_main() {
     const ctx = useContext(CartContext);
     const otx = useContext(OpenContext);
+    const setopen = () =>{
+        otx.setCart()
+        console.log(otx.seeCart);
+    }
     return (
         <>
             {otx.seeCart &&
@@ -37,7 +41,7 @@ function Cart_main() {
                         <div>Total price:</div>
                         <div>{ctx.totalAmount} zł</div>
                         </h2>
-                        <button id='order_button' onClick={otx.setCart()}>Order now</button>
+                        <button id='order_button' onClick={setopen}>Order now</button>
                     </div>
                 </div>
             }
