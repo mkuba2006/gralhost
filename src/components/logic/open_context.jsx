@@ -12,7 +12,7 @@ const OpenContext = React.createContext({
   openFavHover: () => {},
 
 
-  seeCart: false,
+  seeCart: true,
   setCart: () => {},
 
   ELvisible: false,
