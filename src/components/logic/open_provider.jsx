@@ -18,7 +18,7 @@ const favreducer = (state, action) => {
 
 const OpenProvider = (props) => {
   const [isOpen, change] = useReducer(reducer, false);
-  const [isHover, changeH] = useReducer(favreducer, false);
+  const [isHover, changeH] = useReducer(reducer, false);
   const [isCart, changeC] = useReducer(reducer, false);
   const [isELVisible, changeVisible] = useReducer(reducer, false);
   const [isFavhover, changeFavH] = useReducer(favreducer, false);
@@ -33,7 +33,7 @@ const OpenProvider = (props) => {
     setOpen: toggle(change),
 
     hover: isHover,
-    setHover: toggle(changeH),
+    setHover: open(changeH),
 
     Favhover: isFavhover,
     setFavHover: toggle(changeFavH),
