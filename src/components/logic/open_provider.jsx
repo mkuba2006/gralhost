@@ -23,7 +23,6 @@ const OpenProvider = (props) => {
   const [isELVisible, changeVisible] = useReducer(reducer, false);
   const [isFavhover, changeFavH] = useReducer(favreducer, false);
 
-
   const toggle = (setter) => () => setter({ type: 'TOGGLE' });
   const close = (setter) => () => setter({ type: 'CLOSE' });
   const open = (setter) => () => setter({ type: 'OPEN' });
