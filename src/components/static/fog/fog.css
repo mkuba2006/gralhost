@@ -1,0 +1,17 @@
+.before{
+    z-index: 1;
+    top: -10vh;
+    position: fixed;
+    width: 100vw;
+    height: 110vh;
+    background-color: #000000b9;
+    transition: all 0.2s ease;
+}
+.fog{
+    z-index: 2;
+    top: -10vh;
+    position: fixed;
+    width: 100vw;
+    min-height: 110vh;
+    background-color: #000000b9;
+}

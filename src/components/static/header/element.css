@@ -1,0 +1,42 @@
+#elementt{
+    width: auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-top: 0.1px solid rgb(199, 187, 187);
+    padding: 3px 15px 3px 5px;
+}
+
+
+#elementt #img_container{
+    height: 80px;
+    width: 80px;
+    padding: 10px;
+    object-fit: cover;
+    flex: 1;
+}
+
+#elementt #img_container img{
+    height: 80px;
+    width: 80px;
+}
+
+#elementt #element_main{
+    padding: 0 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 2;
+}
+#elementt #element_main #FST{
+    margin-bottom: 5px;
+}
+#elementt #element_main #FST h3{
+    height: auto;
+}
+#elementt #element_main #SEC{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,0 +1,334 @@
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+button{
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.cart{
+    font-size: 25px;
+}
+.sidebar{
+    z-index: 300;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 93px;
+    height: 100%;
+    background: #191717;
+    transition: width 0.4s;
+}
+.sidebar.open{
+    width: 260px;
+}
+.sidebar_inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 260px;
+}
+.sidebar_header{
+    display: flex;
+    align-items: center;
+    height: 72px;
+    background:  rgb(0 0 0 / 15%);
+}
+.sidebar_burger{
+    width: 73px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(10px);
+    flex-direction: column;
+    animation: swap 2s ease;
+}
+.one, .two, .three{
+    display: block;
+    cursor: pointer;
+    width: 26px;
+    height: 3px;
+    margin: 2px;
+    border-radius: 8px;
+    background-color: white;
+    transition: all 0.2s ease;
+    z-index: 20;
+}
+.sidebar.open .one{
+    transform: rotate(-45deg) translate(-6px, 4px);
+}
+.sidebar.open .two{
+    opacity: 0;
+}
+.sidebar.open .three{
+    transform: rotate(45deg) translate(-6px, -4px);
+}
+
+
+
+.sidebar_logo{
+    height: 38px;
+    margin-left: 10px;
+}
+.sidebar_menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.sidebar_button{
+    display: flex;
+    gap: 16px;
+    justify-content: left;
+    height: auto;
+    min-height: 20%;
+    width: 90%;
+    font-size: 16px;
+    text-transform: capitalize;
+    line-height: 1;
+    border-radius: 8px;
+    color: #f9f9f9;
+    opacity: 0.7;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+.sidebar_button > ul{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar.open .sidebar_button:hover{
+    background-color: #615f5f52;
+}
+
+
+
+
+
+
+
+svg{
+    width: 73px;
+}
+.icon{
+    font-size: 30px;
+    color: white;
+    margin-right: 25px;
+}
+.title{
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+}
+.sidebar_button > ul > button{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 100%;
+}
+.sidebar_li{
+    padding-bottom: 3px;
+    font-size: 15px;
+    padding-left: 30px;
+    display: flex;
+    justify-content: left;
+    list-style-type: none;
+    opacity: 0.7;
+    font-family: 'Montserrat', sans-serif;
+}
+.sidebar_li:first-of-type{
+    margin-top: 10px;
+}
+.sidebar_li:hover{
+    opacity: 1;
+}
+.sidebar_button:hover .title{
+    opacity: 1;
+}
+.sidebar_button p{
+    color: white;
+}
+.sidebar_logo, .sidebar_button p{
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.sidebar.open
+:is(.sidebar_button p, .sidebar_logo){
+    opacity: 1;
+} 
+
+
+@media screen and (max-width: 880px) {
+    .sidebar{
+        
+        z-index: 300;
+        position: fixed;
+        overflow: visible;
+        top: 0;
+        left: -230px;
+        width: 93px;
+        height: 100%;
+        background: #191717;
+        transition: width 0.4s , left 0.4s ease-out;
+    }
+    .sidebar.open{
+        width: 260px;
+        left: 0;
+    }
+    .sidebar_inner{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 260px;
+    }
+    .sidebar_header{
+        transition: none;
+        position: fixed;
+        top: 0px;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        height: 72px;
+        left: 0;
+        background: none;
+    }
+
+    .one, .two, .three{
+        background-color: #9400FF;
+    }
+
+
+    .sidebar.open .sidebar_header{
+        left: 0;
+    }
+
+    .sidebar_burger{
+        width: 73px;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(10px);
+        flex-direction: column;
+        animation: swap 2s ease;
+        
+    }
+
+    
+    
+    .sidebar_logo{
+        display: none;
+    }
+    .sidebar_menu{
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 80px;
+        gap: 10px;
+    }
+    
+
+    .sidebar.open .sidebar_menu{
+        transform: translateX(0);
+    }
+
+
+    .sidebar_button{
+        display: flex;
+        gap: 16px;
+        justify-content: left;
+        height: auto;
+        min-height: 20%;
+        width: 90%;
+        font-size: 16px;
+        text-transform: capitalize;
+        line-height: 1;
+        border-radius: 8px;
+        color: #f9f9f9;
+        opacity: 0.7;
+        transition: 0.3s;
+        margin-left: 10px;
+    }
+    .sidebar_button > ul{
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .sidebar.open .sidebar_button:hover{
+        background-color: #615f5f52;
+    }
+    
+    
+    
+    
+    
+    
+    
+    svg{
+        width: 73px;
+    }
+    .icon{
+        font-size: 30px;
+        color: white;
+        margin-right: 25px;
+    }
+    .title{
+        font-size: 18px;
+        color: white;
+        display: flex;
+        align-items: center;
+        opacity: 0.7;
+    }
+    .sidebar_button > ul > button{
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        width: 100%;
+    }
+    .sidebar_li{
+        padding-bottom: 3px;
+        font-size: 15px;
+        padding-left: 30px;
+        display: flex;
+        justify-content: left;
+        list-style-type: none;
+        opacity: 0.7;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .sidebar_li:first-of-type{
+        margin-top: 10px;
+    }
+    .sidebar_li:hover{
+        opacity: 1;
+    }
+    .sidebar_button:hover .title{
+        opacity: 1;
+    }
+    .sidebar_button p{
+        color: white;
+    }
+    .sidebar_logo, .sidebar_button p{
+        opacity: 0;
+        transition: 0.3s;
+    }
+    
+    .sidebar.open
+    :is(.sidebar_button p, .sidebar_logo){
+        opacity: 1;
+    } 
+    
+}
