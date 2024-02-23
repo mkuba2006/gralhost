@@ -1,32 +1,17 @@
-import React, { createContext, useReducer } from 'react';
-import OpenContext from './open_context';
+import { createContext, useState, useContext } from "react";
 
-const reducer = (state, action) => !state;
-const favreducer=(state,action)=>{
-  console.log(action);
-  if(action = "TOGGLE"){
-    return !state;
-  }
-  else if(action = "OPEN"){
-    return true;
-  }
-  else if(action = "CLOSE"){
-    return false;
-  }
-}
-
+const OpenContext = createContext();
 
 const OpenProvider = (props) => {
-  const [isOpen, change] = useReducer(reducer, false);
-  const [isHover, changeH] = useReducer(reducer, false);
-  const [isCart, changeC] = useReducer(reducer, false);
-  const [isELVisible, changeVisible] = useReducer(reducer, false);
-  const [isFavhover, changeFavH] = useReducer(favreducer, false);
+  const [isOpen, change] = useState(false);
+  const [isHover, changeH] = useState(false);
+  const [isFavhover, changeFavH] = useState(false);
+  const [isCart, changeC] = useState(false);
+  const [isELVisible, changeVisible] = useState(false);
 
-
-  const toggle = (setter) => () => setter({ type: 'TOGGLE' });
-  const close = (setter) => () => setter({ type: 'CLOSE' });
-  const open = (setter) => () => setter({ type: 'OPEN' });
+  const toggle = (setter) => () => setter({ type: "TOGGLE" });
+  const close = (setter) => () => setter({ type: "CLOSE" });
+  const open = (setter) => () => setter({ type: "OPEN" });
 
   const OpenCTX = {
     open: isOpen,
@@ -38,7 +23,6 @@ const OpenProvider = (props) => {
     setFavHover: toggle(changeFavH),
     closeFavHover: close(changeFavH),
     openFavHover: open(changeFavH),
-
 
     seeCart: isCart,
     setCart: toggle(changeC),
@@ -53,4 +37,4 @@ const OpenProvider = (props) => {
   );
 };
 
-export default OpenProvider;
+export default OpenProvider; // Add this line to export the OpenProvider component as the default export
