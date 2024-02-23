@@ -10,7 +10,7 @@ function Element(props) {
             </div>
             <div id="info">
                 <h2>
-                  <span id='sp1'>Nazwa: {props.producent} {props.model}<br></br></span>
+                  <span id='sp1'>{props.producent} {props.model}<br></br></span>
                   <span id='sp2'>{props.main1}  {props.main2}  {props.jeden}  |  {props.dwa}  |  {props.trzy}  |  {props.cztery}<br></br></span>
                 </h2>
             </div>
