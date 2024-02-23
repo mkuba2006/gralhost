@@ -1,27 +1,49 @@
-const OpenProvider = (props) => {
-  const initialState = { isOpen: false, isHover: false, isCart: false, isELVisible: false, isFavhover: false };
-  const [state, dispatch] = useReducer((state, action) => {
-    switch (action.type) {
-      case 'TOGGLE':
-        return { ...state, [action.payload]: !state[action.payload] };
-      case 'OPEN':
-        return { ...state, [action.payload]: true };
-      case 'CLOSE':
-        return { ...state, [action.payload]: false };
-      default:
-        return state;
-    }
-  }, initialState);
+import React, { createContext, useReducer } from 'react';
+import OpenContext from './open_context';
 
-  const toggle = (key) => () => dispatch({ type: 'TOGGLE', payload: key });
-  const close = (key) => () => dispatch({ type: 'CLOSE', payload: key });
-  const open = (key) => () => dispatch({ type: 'OPEN', payload: key });
+const reducer = (state, action) => !state;
+const favreducer=(state,action)=>{
+  console.log(action);
+  if(action = "TOGGLE"){
+    return !state;
+  }
+  else if(action = "OPEN"){
+    return true;
+  }
+  else if(action = "CLOSE"){
+    return false;
+  }
+}
+
+
+const OpenProvider = (props) => {
+  const [isOpen, change] = useReducer(reducer, false);
+  const [isHover, changeH] = useReducer(reducer, false);
+  const [isCart, changeC] = useReducer(reducer, false);
+  const [isELVisible, changeVisible] = useReducer(reducer, false);
+  const [isFavhover, changeFavH] = useReducer(favreducer, false);
+
+
+  const toggle = (setter) => () => setter({ type: 'TOGGLE' });
+  const close = (setter) => () => setter({ type: 'CLOSE' });
+  const open = (setter) => () => setter({ type: 'OPEN' });
 
   const OpenCTX = {
-    ...state,
-    toggle,
-    close,
-    open,
+    open: isOpen,
+    setOpen: toggle(change),
+    hover: isHover,
+    setHover: toggle(changeH),
+
+    Favhover: isFavhover,
+    setFavHover: toggle(changeFavH),
+    closeFavHover: close(changeFavH),
+    openFavHover: open(changeFavH),
+
+
+    seeCart: isCart,
+    setCart: toggle(changeC),
+    ELvisible: isELVisible,
+    setVisible: toggle(changeVisible),
   };
 
   return (
@@ -30,4 +52,5 @@ const OpenProvider = (props) => {
     </OpenContext.Provider>
   );
 };
+
 export default OpenProvider;
