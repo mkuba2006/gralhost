@@ -11,7 +11,10 @@ import Fav from '../../fav/cart';
 function Header() {
   const Otx = useContext(OpenContext);
 
-  const changeH = () =>{Otx.setHover(prevHover => !prevHover);};
+  const changeH = () =>{
+    Otx.setHover(prevHover => !prevHover);
+    console.log(Otx.hover);
+  };
   const changeC = () =>{Otx.setCart(); console.log('cart: ',Otx.seeCart);};
   const changeFavH = () =>{
     Otx.setFavHover();
