@@ -14,7 +14,7 @@ function Header() {
   const changeH = () =>{
     Otx.setHover();
     console.log(Otx.hover);
-    console.log("button");
+    console.log("but");
   };
   const changeC = () =>{Otx.setCart(); console.log('cart: ',Otx.seeCart);};
   const changeFavH = () =>{
