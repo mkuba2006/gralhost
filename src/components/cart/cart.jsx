@@ -37,7 +37,7 @@ function Cart_main() {
                         <div>Total price:</div>
                         <div>{ctx.totalAmount} zł</div>
                         </h2>
-                        <button id='order_button' onClick={otx.setCart}>Order now</button>
+                        <button id='order_button' onClick={otx.setCart()}>Order now</button>
                     </div>
                 </div>
             }
