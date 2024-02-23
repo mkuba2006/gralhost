@@ -33,7 +33,7 @@ const OpenProvider = (props) => {
     setOpen: toggle(change),
 
     hover: isHover,
-    setHover: open(changeH),
+    setHover: toggle(changeH),
 
     Favhover: isFavhover,
     setFavHover: toggle(changeFavH),
