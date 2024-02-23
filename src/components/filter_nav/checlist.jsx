@@ -18,12 +18,6 @@ function Checklist() {
     let F3_name = "";
     let F4_name = "";
     let F5_name = "";
-    
-    useEffect(() => {
-        console.log("group: ",ltx.group);
-  
-     }, [ltx]);
-
 
     function push(array, value) {
       if (!array.includes(value)) {
