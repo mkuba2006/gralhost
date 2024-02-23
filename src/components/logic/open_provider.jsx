@@ -7,11 +7,11 @@ const reducer = (state, action) => {
 
 const favreducer = (state, action) => {
   console.log(action);
-  if (action === "TOGGLE") {
+  if (action = "TOGGLE") {
     return !state;
-  } else if (action === "OPEN") {
+  } else if (action = "OPEN") {
     return true;
-  } else if (action === "CLOSE") {
+  } else if (action = "CLOSE") {
     return false;
   }
 }
