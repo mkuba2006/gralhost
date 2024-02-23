@@ -13,6 +13,7 @@ function Header() {
 
   const changeH = () =>{
     Otx.setHover(prevHover => !prevHover);
+    console.log('------');
     console.log(Otx.hover);
   };
   const changeC = () =>{Otx.setCart(); console.log('cart: ',Otx.seeCart);};
