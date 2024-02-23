@@ -11,6 +11,8 @@ const OpenProvider = (props) => {
 
   const toggle = (setter) => () => {
     setter({ type: "TOGGLE" });
+    console.log("isHover old:", isHover);
+    console.log("isHover new:", !isHover);
   };
 
   const close = (setter) => () => {
@@ -20,10 +22,7 @@ const OpenProvider = (props) => {
   const open = (setter) => () => {
     setter({ type: "OPEN" });
   };
-  useEffect(() => {
-    console.log("isHover old:", isHover);
-    console.log("isHover new:", !isHover);
-  }, [isHover]);
+
 
 
 
