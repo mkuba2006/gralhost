@@ -305,7 +305,34 @@ form button:hover {
     }
 }
 
-@media screen and (max-width: 340px){
+@media screen and (max-width: 350px){
+    .item:hover{
+        scale: 1.02;
+        box-shadow: none;
+    }
+    .item div:nth-child(2){
+        width: 65%;
+    }
+    .ul{
+        padding: 0;
+    }
+    .img_cont {
+        width: 150px;
+        height: 120px;
+        margin-right: 15px;
+    }
+    .img_cont img{
+        margin: 0;
+        width: 130px;
+    }
+    .item{
+        width: 90vw;
+    }
+    .sum{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
     .ul{
         padding: 0 10px;
     }

@@ -164,3 +164,14 @@
         padding-bottom: 20px;
     }
 }
+
+
+@media screen and (max-width: 350px){
+    #mainl{
+        width: 88vw;
+        transform: translate(-15vw, -2px);
+    }
+
+
+
+}
