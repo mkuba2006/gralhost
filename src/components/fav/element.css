@@ -144,12 +144,15 @@
         position: absolute;
         min-width: 200px;
         width: 70vw;
-        top: 20%;
+        top: 10%;
         transform: translateX(0);
     }
 }
 
 @media screen and (max-width: 350px) {
+    #elements{
+        max-height: 50vh;
+    }
     span#sp1{
         font-size: 13px;
     }
