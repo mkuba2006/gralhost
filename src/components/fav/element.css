@@ -134,15 +134,23 @@
         z-index: 0;
         top: 0;
         position: fixed;
-        width: 110vw;
+        width: 120vw;
         height: 120vh;
         background-color: #000000b9;
         transition: all 0.2s ease;
-        transform: translateX(-40vw);
+        transform: translateX(-32vw);
     }
     #favourites {
+        position: absolute;
+        min-width: 200px;
         width: 70vw;
         top: 20%;
-        transform: translateX(20px);
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    span#sp1{
+        font-size: 13px;
     }
 }
